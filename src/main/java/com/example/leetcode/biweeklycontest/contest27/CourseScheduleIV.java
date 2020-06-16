@@ -1,4 +1,4 @@
-package com.example.leetcode.contest;
+package com.example.leetcode.biweeklycontest.contest27;
 
 import java.util.ArrayList;
 import java.util.List;
