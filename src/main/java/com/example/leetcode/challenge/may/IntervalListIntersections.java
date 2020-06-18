@@ -1,4 +1,4 @@
-package com.example.leetcode.challenge;
+package com.example.leetcode.challenge.may;
 
 import java.util.ArrayList;
 import java.util.List;

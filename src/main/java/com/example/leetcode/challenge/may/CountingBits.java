@@ -1,4 +1,4 @@
-package com.example.leetcode.challenge;
+package com.example.leetcode.challenge.may;
 
 /**
  * Given a non negative integer number num.
