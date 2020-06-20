@@ -1,4 +1,4 @@
-package com.example.leetcode.Algo;
+package com.example.leetcode.algo;
 
 /**
  * https://blog.csdn.net/tyler_download/article/details/52457108

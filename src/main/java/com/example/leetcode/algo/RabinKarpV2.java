@@ -1,4 +1,4 @@
-package com.example.leetcode.Algo;
+package com.example.leetcode.algo;
 
 public class RabinKarpV2 {
     private static long M = 1000000000000000003L;   //集合空间大小，一个很大的素数
