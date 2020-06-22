@@ -31,6 +31,7 @@ public class SingleNumberIII {
         }
         /**
          * 3, 5 最高一位不同是4
+         * https://www.cnblogs.com/grandyang/p/4741122.html
          */
         sum = Integer.highestOneBit(sum);
         for (int i = 0; i < nums.length; i++) {
