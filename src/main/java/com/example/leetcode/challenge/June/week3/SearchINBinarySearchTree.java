@@ -1,19 +1,22 @@
-package com.example.leetcode.medium;
+package com.example.leetcode.challenge.June.week3;
 
-public class CountCompleteTreeNodes {
+
+
+public class SearchINBinarySearchTree {
     public static void main(String[] args) {
 
     }
 
-    public int countNodes(TreeNode root) {
-        if(root == null)
-            return 0;
-        else if(root.left == null)
-            return  countNodes(root.right) + 1;
-        else if(root.right == null)
-            return  countNodes(root.left) + 1;
-        else
-            return countNodes(root.left) + countNodes(root.right) + 1;
+    public TreeNode searchBST(TreeNode root, int val) {
+        if(root == null){
+            return null;
+        } else if(root.val == val){
+            return root;
+        } else if(root.val > val){
+            return searchBST(root.left,val);
+        } else {
+            return searchBST(root.right,val);
+        }
     }
 
     public class TreeNode {

@@ -1,33 +1,67 @@
-package com.example.leetcode.medium;
+package com.example.leetcode.challenge.June.week1;
 
-public class CountCompleteTreeNodes {
+/**
+ * Invert a binary tree.
+ * <p>
+ * Example:
+ * <p>
+ * Input:
+ * <p>
+ * 4
+ * /   \
+ * 2     7
+ * / \   / \
+ * 1   3 6   9
+ * Output:
+ * <p>
+ * 4
+ * /   \
+ * 7     2
+ * / \   / \
+ * 9   6 3   1
+ * Trivia:
+ * This problem was inspired by this original tweet by Max Howell:
+ * <p>
+ * Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so f*** off.
+ */
+public class InvertBinaryTree {
     public static void main(String[] args) {
 
+        Integer[] array = new Integer[]{4,2,7,1,3,6,9};
+        InvertBinaryTree invertBinaryTree = new InvertBinaryTree();
+        TreeNode root = invertBinaryTree.convert(array);
+        TreeNode result = invertBinaryTree.invertTree(root);
+        result.toString();
     }
 
-    public int countNodes(TreeNode root) {
-        if(root == null)
-            return 0;
-        else if(root.left == null)
-            return  countNodes(root.right) + 1;
-        else if(root.right == null)
-            return  countNodes(root.left) + 1;
-        else
-            return countNodes(root.left) + countNodes(root.right) + 1;
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null)
+            return null;
+        TreeNode temp = root.left;
+        root.left = invertTree(root.right);
+        root.right = invertTree(temp);
+        return root;
     }
 
     public class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
             this.right = right;
         }
     }
+
     public TreeNode convert(Integer[] array) {
         int floor = 0, count = 0;
         TreeNode[] treeNodes = new TreeNode[array.length];
@@ -62,4 +96,5 @@ public class CountCompleteTreeNodes {
         }
         return treeNodes[0];
     }
+
 }
