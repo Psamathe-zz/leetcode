@@ -18,8 +18,8 @@ import java.util.Map;
  */
 public class MinimumWindowSubstring {
     public static void main(String[] args) {
-        String  s = "ADOBECODEBANC";
-        String  t = "ABC";
+        String  s = "bba";
+        String  t = "ab";
         MinimumWindowSubstring minimumWindowSubstring  = new MinimumWindowSubstring();
         minimumWindowSubstring.minWindowV3(s,t);
     }
@@ -74,6 +74,8 @@ public class MinimumWindowSubstring {
 
     /**
      * https://www.cnblogs.com/grandyang/p/4340948.html
+     * "bba"
+     * "ab"
      */
 
     public String minWindowV2(String s, String t) {
