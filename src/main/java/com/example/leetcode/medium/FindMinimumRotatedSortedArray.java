@@ -27,25 +27,20 @@ public class FindMinimumRotatedSortedArray {
         System.out.println(result);
     }
 
+    /**
+     * https://www.cnblogs.com/grandyang/p/4032934.html
+     * @param nums
+     * @return
+     */
     public int findMin(int[] nums) {
-        int left = 0;
-        int right = nums.length - 1;
-        int mid;
-        while(left < right){
-            mid = (left + right) / 2;
-            if (nums[left] < nums[right] ) {
-                if(nums[mid] < nums[left])
-                    right = mid ;
-                else
-                    right = mid - 1;
-            } else {
-                if(nums[mid] > nums[left])
-                    left = mid ;
-                else
-                    left = mid + 1;
-            }
+        int left = 0, right = (int)nums.length - 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] > nums[right])
+                left = mid + 1;
+            else
+                right = mid;
         }
-
-        return nums[left];
+        return nums[right];
     }
 }
