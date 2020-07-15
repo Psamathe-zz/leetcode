@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  *
  * Example 1:
  *
- * Input: "the sky is blue"
+ * Input: "Toeplitz Matrixthe sky is blue"
  * Output: "blue is sky the"
  * Example 2:
  *
