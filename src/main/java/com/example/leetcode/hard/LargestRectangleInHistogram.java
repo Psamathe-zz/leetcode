@@ -1,5 +1,7 @@
 package com.example.leetcode.hard;
 
+import java.util.Stack;
+
 /**
  * Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
  *
@@ -13,9 +15,9 @@ package com.example.leetcode.hard;
  */
 public class LargestRectangleInHistogram {
     public static void main(String[] args) {
-        int[] heights = new int[]{2,1,5,6,2,3};
+        int[] heights = new int[]{2,3};
         LargestRectangleInHistogram largestRectangleInHistogram = new LargestRectangleInHistogram();
-        largestRectangleInHistogram.largestRectangleAreaV1(heights);
+        largestRectangleInHistogram.largestRectangleAreaV0(heights);
     }
 
     public int largestRectangleArea(int[] heights) {
@@ -44,6 +46,23 @@ public class LargestRectangleInHistogram {
     /**
      * https://www.cnblogs.com/grandyang/p/4322653.html
      */
+
+    public int largestRectangleAreaV0(int[] heights) {
+        int res = 0;
+        Stack<Integer> st = new Stack<>();
+        for (int i = 0; i < heights.length; ++i) {
+            while (!st.empty() && heights[st.peek()] >= heights[i]) {
+                int cur = st.pop();
+                res = Math.max(res, heights[cur] * (st.empty() ? i : (i - st.peek() - 1)));
+            }
+            st.push(i);
+        }
+        while (!st.empty()){
+            int cur = st.pop();
+            res = Math.max(res, heights[cur] * (st.empty() ? heights.length : (heights.length - st.peek() - 1)));
+        }
+        return res;
+    }
     /**
      * faster solution
      * https://leetcode.com/submissions/detail/369128906/
