@@ -1,4 +1,4 @@
-package com.example.leetcode.easy;
+package com.example.leetcode.challenge.July.week3;
 
 /**
  * Given a 2D board and a word, find if the word exists in the grid.
@@ -38,7 +38,6 @@ public class WordSearch {
     }
 
     /**
-     * https://www.cnblogs.com/grandyang/p/4332313.html
      */
     String target;
     public boolean exist(char[][] board, String word) {
