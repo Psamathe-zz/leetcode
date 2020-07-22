@@ -45,7 +45,7 @@ public class DayOfWeek {
     }
     long DAYS_0000_TO_1970 = (146097 * 5L) - (30L * 365L + 7L);
     public String dayOfTheWeek(int day, int month, int year) {
-        int dow0 = Math.floorMod(toEpochDay(day,month,year) + 3, 7);
+        int dow0 = (int)Math.floorMod(toEpochDay(day,month,year) + 3, 7L);
         Map<Integer,String> map = new HashMap<>();
         map.put(0,"Monday");
         map.put(1,"Tuesday");
