@@ -45,7 +45,6 @@ public class BinaryTreePaths {
                 res = res.stream().map(e->root.val + "->" + e).collect(Collectors.toList());
         }
         return res;
-
     }
 
 
