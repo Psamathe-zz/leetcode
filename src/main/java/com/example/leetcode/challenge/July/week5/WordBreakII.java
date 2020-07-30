@@ -1,10 +1,9 @@
-package com.example.leetcode.hard;
+package com.example.leetcode.challenge.July.week5;
 
 import java.util.*;
 
 /**
- * Given a non-empty string s and a dictionary wordDict containing a list of non-empty words,
- * add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences.
+ * Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences.
  *
  * Note:
  *
@@ -43,18 +42,12 @@ import java.util.*;
 public class WordBreakII {
     public static void main(String[] args) {
         String s = "catsanddog";
-        List<String> wordDict = Arrays.asList(new String[]{"apple", "pen", "applepen", "pine", "pineapple"});
+        List<String> wordDict = Arrays.asList(new String[]{"cat", "cats", "and", "sand", "dog"});
         WordBreakII wordBreakII = new WordBreakII();
-        List<String> result = wordBreakII.wordBreak(s,wordDict);
-        System.out.println(result);
+        List<String> res = wordBreakII.wordBreak(s,wordDict);
+        System.out.println(res);
     }
 
-    /**
-     * todo
-     * @param s
-     * @param wordDict
-     * @return
-     */
     /**
      * https://www.cnblogs.com/grandyang/p/4576240.html
      */
