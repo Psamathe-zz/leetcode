@@ -1,9 +1,6 @@
 package com.example.leetcode.algo;
 
-import org.springframework.core.env.Environment;
 
-import java.io.Console;
-import java.io.File;
 import java.util.HashSet;
 
 public class Trie {
