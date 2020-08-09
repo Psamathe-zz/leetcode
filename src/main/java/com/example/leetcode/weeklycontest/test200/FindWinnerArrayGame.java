@@ -1,4 +1,4 @@
-package com.example.leetcode.weeklycontest.week200;
+package com.example.leetcode.weeklycontest.test200;
 
 /**
  * Given an integer array arr of distinct integers and an integer k.

@@ -1,4 +1,4 @@
-package com.example.leetcode.weeklycontest.week200;
+package com.example.leetcode.weeklycontest.test200;
 
 /**
  * Given an array of integers arr, and three integers a, b and c. You need to find the number of good triplets.

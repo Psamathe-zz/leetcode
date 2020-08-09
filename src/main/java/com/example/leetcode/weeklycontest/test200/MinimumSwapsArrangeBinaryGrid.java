@@ -1,4 +1,4 @@
-package com.example.leetcode.weeklycontest.week200;
+package com.example.leetcode.weeklycontest.test200;
 
 /**
  * Given an n x n binary grid, in one step you can choose two adjacent rows of the grid and swap them.
