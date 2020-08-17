@@ -1,9 +1,7 @@
 package com.example.leetcode.challenge.August.week2;
 
-
-import com.example.leetcode.sometest.A;
-
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Design an Iterator class, which has:
@@ -33,34 +31,29 @@ import java.util.*;
  */
 public class CombinationIterator {
     public static void main(String[] args) {
-        String characters = "abc";
+        String characters = "";
         int combinationLength = 2;
         CombinationIterator obj = new CombinationIterator(characters, combinationLength);
         String param_1 = obj.next();
         boolean param_2 = obj.hasNext();
+
     }
 
     Queue<String> queue;
-    Stack<Character> stack;
     public CombinationIterator(String characters, int combinationLength) {
         queue = new LinkedList<>();
-        stack = new Stack<>();
-        dfs(characters,combinationLength,0);
+        dfs(0, combinationLength, new StringBuilder(), characters);
     }
 
-
-
-    public void dfs(String str,int combinationLength,int index){
-        if(stack.size() == combinationLength){
-            queue.offer(stack.toString());
-        } else if(index == str.length()){
+    private void dfs(int start, int target, StringBuilder sb, String s) {
+        if(sb.length() == target) {
+            queue.add(sb.toString());
             return;
         }
-
-        stack.push(str.charAt(index));
-        dfs(str,combinationLength,index+1);
-        stack.pop();
-        dfs(str,combinationLength,index+1);
+        for(int i = start; i < s.length(); i++) {
+            dfs(i + 1, target, sb.append(s.charAt(i)), s);
+            sb.deleteCharAt(sb.length() - 1);
+        }
     }
 
     public String next() {
@@ -68,6 +61,6 @@ public class CombinationIterator {
     }
 
     public boolean hasNext() {
-        return queue.isEmpty();
+        return !queue.isEmpty();
     }
 }
