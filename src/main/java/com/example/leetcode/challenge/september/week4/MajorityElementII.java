@@ -1,4 +1,4 @@
-package com.example.leetcode.september.week4;
+package com.example.leetcode.challenge.september.week4;
 
 import java.util.ArrayList;
 import java.util.HashMap;
