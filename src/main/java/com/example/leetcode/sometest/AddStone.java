@@ -11,6 +11,18 @@ public class AddStone {
         System.out.println(result);
     }
 
+    String sum(String... numbers) {
+        double total = 0;
+        Long a1 = 0l;
+        Long a2 = 0l;
+        for (String number : numbers) {
+            String[] strs = number.split(".");
+            a1 += Long.parseLong(strs[0]);
+            a2 += Long.parseLong(strs[1]);
+        }
+        return String.valueOf(a1) + "." + String.valueOf(a2);
+    }
+
     boolean exists(int[] ints, int k) {
 
         for (int value : ints){
