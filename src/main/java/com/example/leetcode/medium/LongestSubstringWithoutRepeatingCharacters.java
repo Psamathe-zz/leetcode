@@ -10,7 +10,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     public int lengthOfLongestSubstring(String s) {
         int length = s.length();
-        if(s.length() <= 1) return length;
+        if(s.length() <= 1)
+            return length;
         int result = 0;
         int tmp;
         for(int i = 0; i < length; i++){
