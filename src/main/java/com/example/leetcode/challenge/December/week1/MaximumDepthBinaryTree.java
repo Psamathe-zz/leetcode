@@ -1,4 +1,4 @@
-package com.example.leetcode.challenge.december.week1;
+package com.example.leetcode.challenge.December.week1;
 
 
 /**
