@@ -1,71 +1,26 @@
-package com.example.leetcode.easy;
+package com.example.leetcode.challenge.December.week4;
 
-/**
- * Given a binary search tree and the lowest and highest boundaries as L and R, trim the tree so that all its elements lies in [L, R] (R >= L). You might need to change the root of the tree, so the result should return the new root of the trimmed binary search tree.
- *
- * Example 1:
- * Input:
- *     1
- *    / \
- *   0   2
- *
- *   L = 1
- *   R = 2
- *
- * Output:
- *     1
- *       \
- *        2
- * Example 2:
- * Input:
- *     3
- *    / \
- *   0   4
- *    \
- *     2
- *    /
- *   1
- *
- *   L = 1
- *   R = 3
- *
- * Output:
- *       3
- *      /
- *    2
- *   /
- *  1
- *
- *  [1,0,2]
- * 1
- * 2
- */
-public class TrimBinarySearchTree {
+public class BalancedBinaryTree {
     public static void main(String[] args) {
-        Integer[] array = new Integer[]{1,0,2};
-        TrimBinarySearchTree trimBinarySearchTree = new TrimBinarySearchTree();
-        TreeNode treeNode = trimBinarySearchTree.convert(array);
-        int L = 1;
-        int R = 2;
-        TreeNode node = trimBinarySearchTree.trimBST(treeNode,L,R);
-        System.out.println(node);
+
     }
 
-    public TreeNode trimBST(TreeNode root, int L, int R) {
-        if (null==root)
-            return null;
-        if (root.val < L)
-            return trimBST(root.right, L, R);
-        if (root.val > R)
-            return trimBST(root.left, L, R);
-        root.left = trimBST(root.left, L, R);
-        root.right = trimBST(root.right, L, R);
-        return root;
+    public boolean isBalanced(TreeNode root) {
+        if(root == null)
+            return true;
+        else if(Math.abs(depth(root.left) - depth(root.right)) <= 1)
+            return  isBalanced(root.left) && isBalanced(root.right);
+        else
+            return false;
     }
 
+    public int depth(TreeNode node) {
+        if(node == null )
+            return 0;
+        return Math.max(depth(node.left), depth(node.right)) + 1;
+    }
 
-
-    `public class TreeNode {
+    public class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -111,5 +66,5 @@ public class TrimBinarySearchTree {
             floor++;
         }
         return treeNodes[0];
-    }`
+    }
 }
