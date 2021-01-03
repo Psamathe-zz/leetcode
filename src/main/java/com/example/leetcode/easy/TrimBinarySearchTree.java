@@ -65,7 +65,7 @@ public class TrimBinarySearchTree {
 
 
 
-    `public class TreeNode {
+    public class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -111,5 +111,5 @@ public class TrimBinarySearchTree {
             floor++;
         }
         return treeNodes[0];
-    }`
+    }
 }
