@@ -8,30 +8,30 @@ public class HappyNumber {
 
     public boolean isHappy(int n) {
 
-        if(n==1){
+        if (n == 1) {
             return true;
         }
-        if(n<1){
+        if (n < 1) {
             return false;
         }
         HashSet<Integer> resultList = new HashSet<>();
-        while(n!=1){
-            n=recalculate(n);
-            if(! resultList.add(n) )
+        while (n != 1) {
+            n = recalculate(n);
+            if (!resultList.add(n))
                 return false;
         }
         return true;
 
     }
 
-    private int recalculate(int n){
+    private int recalculate(int n) {
         int temp = n;
         int result = 0;
-        while(temp/10>0){
-            result += (int)Math.pow(temp%10,2);
+        while (temp / 10 > 0) {
+            result += (int) Math.pow(temp % 10, 2);
             temp = temp / 10;
         }
-        result += (int)Math.pow(temp,2);
+        result += (int) Math.pow(temp, 2);
         return result;
     }
 
@@ -45,23 +45,23 @@ public class HappyNumber {
     }
 
 
-
     public boolean isHappyV3(int n) {
-        if(n<1) {
+        if (n < 1) {
             return false;
         }
-        while(true) {
-            n=squareAndSum(n);
-            if(n==1 || n==7) return true;
-            if(n<10)  return false;
+        while (true) {
+            n = squareAndSum(n);
+            if (n == 1 || n == 7) return true;
+            if (n < 10) return false;
         }
     }
-    private int squareAndSum(int n){
+
+    private int squareAndSum(int n) {
         int sum = 0;
-        while(n!=0){
-            int rem=n%10;
-            n=n/10;
-            sum=sum+(rem*rem);
+        while (n != 0) {
+            int rem = n % 10;
+            n = n / 10;
+            sum = sum + (rem * rem);
         }
         return sum;
     }
@@ -102,5 +102,5 @@ public class HappyNumber {
         HappyNumber happyNumber = new HappyNumber();
         boolean result = happyNumber.isHappyV2(value);
         System.out.println(result);
-
- 
+    }
+}

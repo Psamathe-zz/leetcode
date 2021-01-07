@@ -20,8 +20,8 @@ import java.util.Deque;
 public class LargestRectangleHistogram {
     public static void main(String[] args) {
         int[] heights = new int[]{2,1,5,6,2,3};
-        LargestRectangleHistogram largestRectangleHistogram = new LargestRectangleHistogram();
-        largestRectangleHistogram.largestRectangleArea(heights);
+        LargestRectangleHistogram1 largestRectangleHistogram1 = new LargestRectangleHistogram1();
+        largestRectangleHistogram1.largestRectangleArea(heights);
     }
 
     public int largestRectangleArea(int[] heights) {

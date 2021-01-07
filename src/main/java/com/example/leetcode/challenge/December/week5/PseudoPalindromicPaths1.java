@@ -36,18 +36,18 @@ import java.util.Map;
  * The given binary tree will have between 1 and 10^5 nodes.
  * Node values are digits from 1 to 9.
  */
-public class PseudoPalindromicPaths {
+public class PseudoPalindromicPaths1 {
     public static void main(String[] args) {
-        PseudoPalindromicPaths pseudoPalindromicPaths = new PseudoPalindromicPaths();
+        PseudoPalindromicPaths1 pseudoPalindromicPaths1 = new PseudoPalindromicPaths1();
         Integer[] array = new Integer[]{2,3,1,3,1,null,1};
-        TreeNode root = pseudoPalindromicPaths.convert(array);
-        int res = pseudoPalindromicPaths.pseudoPalindromicPaths(root);
+        TreeNode root = pseudoPalindromicPaths1.convert(array);
+        int res = pseudoPalindromicPaths1.pseudoPalindromicPaths(root);
         System.out.println(res);
     }
 
     int result = 0;
     Map<Integer,Integer> count = new HashMap<>();
-    public int pseudoPalindromicPaths (TreeNode root) {
+    public int pseudoPalindromicPaths1 (TreeNode root) {
         helper(root);
         return result;
     }
@@ -95,6 +95,11 @@ public class PseudoPalindromicPaths {
     }
 
     public int pseudoPalindromicPathsV1 (TreeNode root) {
+        preorderV1(root, 0);
+        return countV1;
+    }
+
+    private int pseudoPalindromicPaths(TreeNode root) {
         preorderV1(root, 0);
         return countV1;
     }

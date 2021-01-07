@@ -20,7 +20,7 @@ import java.util.Arrays;
  */
 public class SingleNumberII {
     public static void main(String[] args) {
-        int[] nums = new int[]{2,2,3,2};
+        int[] nums = new int[]{2, 2, 3, 2};
         SingleNumberII singleNumberII = new SingleNumberII();
         int result = singleNumberII.singleNumber(nums);
         System.out.println(result);
@@ -54,4 +54,6 @@ public class SingleNumberII {
         }
 
         return nums[nums.length - 1];
+    }
+}
  

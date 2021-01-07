@@ -41,8 +41,9 @@ public class SumRootLeafNumbers {
     }
 
     int result = 0;
+
     public int sumNumbers(TreeNode root) {
-        if(root == null)
+        if (root == null)
             return result;
         else {
             roodToLeaf(root, 0);
@@ -50,14 +51,14 @@ public class SumRootLeafNumbers {
         }
     }
 
-    public void roodToLeaf(TreeNode node,int value){
-        if(node.left == null && node.right == null){
+    public void roodToLeaf(TreeNode node, int value) {
+        if (node.left == null && node.right == null) {
             result += value * 10 + node.val;
         } else {
-            if(node.left != null)
-                roodToLeaf(node.left, value * 10  + node.val);
-            if(node.right != null)
-                roodToLeaf(node.right, value * 10  + node.val);
+            if (node.left != null)
+                roodToLeaf(node.left, value * 10 + node.val);
+            if (node.right != null)
+                roodToLeaf(node.right, value * 10 + node.val);
         }
     }
 
@@ -65,14 +66,21 @@ public class SumRootLeafNumbers {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
             this.right = right;
         }
     }
+
     public TreeNode convert(Integer[] array) {
         int floor = 0, count = 0;
         TreeNode[] treeNodes = new TreeNode[array.length];
@@ -106,4 +114,6 @@ public class SumRootLeafNumbers {
             floor++;
         }
         return treeNodes[0];
+    }
+}
  
