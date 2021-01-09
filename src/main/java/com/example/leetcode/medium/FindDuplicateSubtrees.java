@@ -1,7 +1,5 @@
 package com.example.leetcode.medium;
 
-import com.example.leetcode.challenge.July.week2.MaximumWidthBinaryTree;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

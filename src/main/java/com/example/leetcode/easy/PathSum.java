@@ -1,7 +1,5 @@
 package com.example.leetcode.easy;
 
-import com.example.leetcode.challenge.June.week1.InvertBinaryTree;
-
 public class PathSum {
     public static void main(String[] args) {
 

@@ -1,8 +1,6 @@
 package com.example.leetcode.biweeklycontest.contest38;
 
 
-import com.example.leetcode.challenge.October.week2.SortList;
-
 import java.util.*;
 
 /**
