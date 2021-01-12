@@ -1,4 +1,4 @@
-package com.example.leetcode.challenge.January.week2;
+package com.example.leetcode.challenge.test2021.January.week2;
 
 public class MergeSortedArray {
     public static void main(String[] args) {
