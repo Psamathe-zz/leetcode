@@ -1,4 +1,4 @@
-package com.example.leetcode.challenge.test2021.fabruary.week2;
+package com.example.leetcode.challenge.test2021.february.week2;
 
 
 import java.util.Iterator;
