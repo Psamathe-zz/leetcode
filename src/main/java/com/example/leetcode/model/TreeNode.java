@@ -6,14 +6,14 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
     TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    public TreeNode(int val) { this.val = val; }
+    public TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
     }
 
-    public TreeNode convert(Integer[] array) {
+    public static TreeNode convert(Integer[] array) {
         int floor = 0, count = 0;
         TreeNode[] treeNodes = new TreeNode[array.length];
         while (array != null && count < array.length) {
