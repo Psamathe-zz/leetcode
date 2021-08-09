@@ -1,5 +1,8 @@
 package com.example.leetcode.medium;
 
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 /**
  * Alex and Lee play a game with piles of stones.  There are an even number of piles arranged in a row, and each pile has a positive integer number of stones piles[i].
  *
@@ -24,9 +27,9 @@ package com.example.leetcode.medium;
  */
 public class StoneGame {
     public static void main(String[] args) {
-        int[] piles = new int[]{5,3,4,5};
+        int[] piles = new int[]{1,3,4,5};
         StoneGame stoneGame = new StoneGame();
-        boolean result = stoneGame.stoneGameV1(piles);
+        boolean result = stoneGame.stoneGame(piles);
         System.out.println(result);
     }
 
@@ -47,11 +50,14 @@ public class StoneGame {
         if (left > right)
             return cur0 > cur1;
         if (player == 0) {
-            return help(piles, cur0 + piles[left], cur1, left + 1, right, 1) || help(piles, cur0 + piles[right], cur1, left + 1, right, 1);
+            boolean b1 =  help(piles, cur0 + piles[left], cur1, left + 1, right, 1);
+            boolean b2 =  help(piles, cur0 + piles[right], cur1, left + 1, right, 1);
+            return b1 || b2;
         } else {
-            return help(piles, cur0, cur1 + piles[left], left, right - 1, 0) || help(piles, cur0, cur1 + piles[right], left, right - 1, 0);
+            boolean b1 =  help(piles, cur0, cur1 + piles[left], left, right - 1, 0);
+            boolean b2 =  help(piles, cur0, cur1 + piles[right], left, right - 1, 0);
+            return b1 || b2;
         }
-
     }
 
     public boolean stoneGameV1(int[] piles) {
@@ -66,5 +72,34 @@ public class StoneGame {
             }
         }
         return dp[0][n - 1] > 0;
+    }
+
+    public boolean stoneGameV2(int[] piles) {
+        if(piles.length == 1) return true;  //  Corner case with only one pile
+
+        Queue<Integer> pileQ = new PriorityQueue<>((a, b) -> b - a);
+
+        int aSum = 0;
+        int bSum = 0;
+
+        for(int pile : piles){
+            pileQ.offer(pile);
+        }
+
+        while(!pileQ.isEmpty()){
+            if(pileQ.peek() == null) {
+                return false;
+            }else{
+                aSum += pileQ.poll();
+            }
+
+            if(pileQ.peek() == null) {
+                return true;
+            }else{
+                bSum += pileQ.poll();
+            }
+        }
+
+        return aSum > bSum;
     }
 }

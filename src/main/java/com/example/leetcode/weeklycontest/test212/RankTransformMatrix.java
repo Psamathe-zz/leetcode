@@ -54,7 +54,12 @@ import java.util.*;
  */
 public class RankTransformMatrix {
     public static void main(String[] args) {
-
+        RankTransformMatrix rankTransform = new RankTransformMatrix();
+        rankTransform.matrixRankTransform(new int[][]{
+                {-37,-50,-3,44},
+                {-37,46,13,-32},
+                {47,-42,-3,-40},
+                {-17,-22,-39,24}});
     }
 
 
