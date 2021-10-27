@@ -1,32 +1,32 @@
-package com.example.leetcode.challenge.test2020.april.week1;
+package com.example.leetcode.challenge.test2021.august.week2;
+
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Given an array of strings, group anagrams together.
+ * Given an array of strings strs, group the anagrams together. You can return the answer in any order.
  *
- * Example:
+ * An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
  *
- * Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
- * Output:
- * [
- *   ["ate","eat","tea"],
- *   ["nat","tan"],
- *   ["bat"]
- * ]
- * Note:
  *
- * All inputs will be in lowercase.
- * The order of your output does not matter.
+ *
+ * Example 1:
+ *
+ * Input: strs = ["eat","tea","tan","ate","nat","bat"]
+ * Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+ * Example 2:
+ *
+ * Input: strs = [""]
+ * Output: [[""]]
+ * Example 3:
+ *
+ * Input: strs = ["a"]
+ * Output: [["a"]]
  */
 public class GroupAnagrams {
-
     public static void main(String[] args) {
-        String[] input = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};
-        GroupAnagrams groupAnagrams = new GroupAnagrams();
-        List<List<String>> result = groupAnagrams.groupAnagramsV2(input);
-        System.out.println(result);
+
     }
 
     public List<List<String>> groupAnagrams(String[] strs) {
@@ -35,6 +35,7 @@ public class GroupAnagrams {
         }));
         return tempMap.values().stream().collect(Collectors.toList());
     }
+
 
     /**
      * small memory
@@ -97,4 +98,3 @@ public class GroupAnagrams {
         return result;
     }
 }
-
