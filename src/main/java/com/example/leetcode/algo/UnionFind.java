@@ -14,6 +14,7 @@ public class UnionFind {
         }
     }
 
+    // 查询 x 的根节点
     public int find(int x) {
         int cur = x;
         while (parent[cur] != cur) {
@@ -24,10 +25,15 @@ public class UnionFind {
         return cur;
     }
 
+    // 从并查集中拆分出来
+    public void split(int x){
+        parent[x] = x;
+    }
+
     public boolean isConnected(int x, int y) {
         return find(x) == find(y);
     }
-
+    // 合并节点, y 的根节点指向 x 的根节点
     public void union(int x, int y) {
         //if (!gcd(x, y)) return;
 
