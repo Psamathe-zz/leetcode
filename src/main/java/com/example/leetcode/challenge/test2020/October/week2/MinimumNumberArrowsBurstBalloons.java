@@ -1,6 +1,7 @@
 package com.example.leetcode.challenge.test2020.October.week2;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * There are some spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it's horizontal, y-coordinates don't matter, and hence the x-coordinates of start and end of the diameter suffice. The start is always smaller than the end.
@@ -56,7 +57,7 @@ public class MinimumNumberArrowsBurstBalloons {
     public int findMinArrowShots(int[][] points) {
         if(points.length==0)
             return 0;
-        Arrays.sort(points,(a, b)->(Double.compare(a[1],b[1])));
+        Arrays.sort(points, Comparator.comparingDouble(a -> a[1]));
         int tail=points[0][1];
         int num=1;
         for(int i=1;i<points.length;i++){

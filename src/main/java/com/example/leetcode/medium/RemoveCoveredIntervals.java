@@ -26,7 +26,13 @@ import java.util.List;
  */
 public class RemoveCoveredIntervals {
     public static void main(String[] args) {
-        int[][] intervals = new int[][]{{1,4},{3,6},{2,8}};
+        int[][] intervals = new int[][]{
+                {34335,39239},
+                {15875,91969},
+                {29673,66453},
+                {53548,69161},
+                {40618,93111}
+        };
         RemoveCoveredIntervals removeCoveredIntervals = new RemoveCoveredIntervals();
         int result = removeCoveredIntervals.removeCoveredIntervals(intervals);
         System.out.println(result);
