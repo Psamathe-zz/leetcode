@@ -51,7 +51,7 @@ public class ScoreOfParentheses {
                     stack.push(value);
                 } else {
                     while (!stack.peek().equals('(')){
-                        value += Integer.valueOf(stack.pop().toString());
+                        value += Integer.parseInt(stack.pop().toString());
                     }
                     stack.pop();
                     stack.push(value * 2);

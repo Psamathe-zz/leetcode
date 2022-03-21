@@ -18,8 +18,4 @@ public class ActorSystemTools {
         return actorSystem.actorOf(Props.create(clazz));
     }
 
-    public static void shutdown() {
-        System.out.println("shutdown actorSystem...");
-        actorSystem.shutdown();
-    }
 }
