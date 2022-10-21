@@ -1,6 +1,5 @@
 package com.example.leetcode.challenge.test2022.march;
 
-import scala.Char;
 
 import java.util.Stack;
 
