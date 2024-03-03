@@ -1,6 +1,5 @@
-package com.example.leetcode.challenge.test2022.november;
+package com.example.leetcode.biweeklycontest.old.contest56;
 
-import com.example.leetcode.biweeklycontest.old.contest56.NearestExit;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -44,7 +43,7 @@ import java.util.Set;
  * Output: -1
  * Explanation: There are no exits in this maze.
  */
-public class NearestExitEntranceMaze {
+public class NearestExit {
     public static void main(String[] args) {
 
     }
@@ -104,4 +103,5 @@ public class NearestExitEntranceMaze {
             this.step = step;
         }
     }
+
 }
